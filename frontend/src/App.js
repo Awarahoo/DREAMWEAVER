@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Create from "./pages/Create";
+import Track from "./pages/Track";
 
 function App() {
   const [data, setData] = useState("");
@@ -19,12 +23,13 @@ function App() {
 
   return (
     <div>
-      <div className="text-3xl font-bold underline">
-        hello from frontend
-      </div>
-      <div>
-        {data} from backend
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/create" element={<Create />} />
+          <Route path="/track" element={<Track />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
