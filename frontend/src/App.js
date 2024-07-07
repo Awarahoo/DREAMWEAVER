@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div>
-      <div>
+      <div className="text-3xl font-bold underline">
         hello from frontend
       </div>
       <div>
